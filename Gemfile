@@ -13,7 +13,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery_pwstrength_bootstrap_4', '~> 1.2', '>= 1.2.2'
-gem 'bootstrap', '~> 4.0.0'
+gem "bootstrap", ">= 4.1.2"
 gem 'bcrypt', '3.1.12'
 
 gem 'bootsnap', '>= 1.1.0', require: false
