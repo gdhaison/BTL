@@ -1,0 +1,26 @@
+<% provide(:title, 'Sign up') %>
+<h1>Sign up</h1>
+<div class="container">
+  <div class="col-md-7">
+    <div class="form">
+    <%= form_with model: @user, local: true do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.submit "Create my account", class: "btn btn-primary" %>
+    <% end %>
+    </div>
+  </div>
+  <div id="image">
+  <%= image_tag("sign_up.jpg", :class => "d-block w-30") %>
+  </div>
+</div>

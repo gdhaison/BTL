@@ -1,0 +1,8 @@
+vi:
+  layouts:
+    header:
+      home: "Trang chủ"
+  static_pages:
+    home:
+      home: "Trang chủ"
+  web_title: "Laptop88 Chuyên Laptop các loại"
