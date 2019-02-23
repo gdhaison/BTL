@@ -33,7 +33,17 @@ en:
   layouts:
     header:
       home: "Home"
+      intro: "Present"
+      other: "Other"
+      access: "Accessories"
+      graphic: "Graphic Card"
+      pin: "Battery"
+      mouse: "Computer Mouse"
+      other1: "Other"
   static_pages:
     home:
       home: "Home"
+  sessions:
+    new:
+      log_in: "Log In"
   web_title: "Laptop88 Store"

@@ -2,7 +2,17 @@ vi:
   layouts:
     header:
       home: "Trang chủ"
+      intro: "Giới thiệu"
+      other: "Hãng Khác"
+      access: "Phụ kiện"
+      graphic: "Card đồ họa"
+      pin: "Pin"
+      mouse: "Chuột"
+      other1: "Khác"
   static_pages:
     home:
       home: "Trang chủ"
+  sessions:
+    new:
+      log_in: "Đăng nhập"
   web_title: "Laptop88 Chuyên Laptop các loại"
