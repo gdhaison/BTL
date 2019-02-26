@@ -6,8 +6,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       log_in user
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-      redirect_to user
-      remember user
+      redirect_back_or user
       flash[:succcess] = "Success"
     else 
       flash[:danger] = "Invalid email/password combination"

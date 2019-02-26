@@ -15,6 +15,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery_pwstrength_bootstrap_4', '~> 1.2', '>= 1.2.2'
 gem "bootstrap", ">= 4.1.2"
 gem 'bcrypt', '3.1.12'
+gem 'faker'
+gem 'will_paginate',           '3.1.6'
+gem 'will_paginate-bootstrap4', '~> 0.2.2'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
