@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'laptops/new'
   get 'laptop/new'
   get 'sessions/new'
   get 'users/new'
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
   get "/edit",to: "users#edit"
   get "/admin", to: "admin#admin"
   get '/login', to: 'sessions#new'
+  get "listDell", to: "laptops#listDell"
   post '/login', to: 'sessions#create'
   delete '/logout',to: 'sessions#destroy'
   resources :users

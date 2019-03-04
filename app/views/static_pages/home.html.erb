@@ -1,38 +1,46 @@
 <% provide :title, t(".home") %>
 <h1></h1>
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <%= image_tag("home-banner-01.jpeg", :alt => "First slide", :class => "d-block w-100") %>
+<div class="container">
+  <div class="container">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <%=link_to image_tag("home-banner-01.jpeg", :alt => "First slide", :class => "d-block w-100") %>
+        </div>
+        <div class="carousel-item">
+          <%= link_to image_tag("affinity.jpeg", :class => "d-block w-100",:alt=>"Second slide") %>
+        </div>
+        <div class="carousel-item">
+          <%= link_to image_tag("cinelli.jpeg", :class => "d-block w-100",:alt=>"Third slide") %>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
-    <div class="carousel-item">
-      <%= image_tag("affinity.jpeg", :class => "d-block w-100",:alt=>"Second slide") %>
-    </div>
-    <div class="carousel-item">
-    <%= image_tag("cinelli.jpeg", :class => "d-block w-100",:alt=>"Third slide") %>
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-<div class= "container-fluid">
-  <% @laptops.each do |laptop| %>
-    <div class="row">
-      <div class ="col-lg-4 col-sm-6 portfolio-item">
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="..." alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+    <h1><strong>Các laptop mới nhất</strong></h1>
+    <div class= "container-fluid">
+      <div class="row">
+        <% @laptops.each do |laptop| %>
+        <div class="col-md-4">
+          <div class="card" style="width:300px">
+            <img class="card-img-top" src="#" alt="Card image">
+              <div class="card-body">
+                <h4 class="card-title"><%=link_to laptop.name,laptop_path(laptop)%></h4>
+                <p class="card-text"><%=laptop.descripton%></p>
+                <h4 class="card-text">Giá: <%=laptop.price%>VNĐ</h4>
+                <a href="#" class="btn btn-primary">Đặt mua</a>
+              </div>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
-  <% end %>
-</div>
+  
+

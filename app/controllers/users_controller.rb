@@ -24,17 +24,17 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit;
+  def edit
     @user=User.find(params[:id])
   end
   def update
     @user = User.find params[:id]
 
     if @user.update_attributes user_params
-      flash[:success] = t "updated"
+      flash[:success] = "updated"
       redirect_to @user
     else
-      flash[:danger] = t "notice_show"
+      flash[:danger] = "notice_show"
       render "edit"
    end
   end
