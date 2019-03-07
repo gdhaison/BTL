@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'laptops/new'
-  get 'laptop/new'
-  get 'sessions/new'
-  get 'users/new'
   get "static_pages/home"
   root "static_pages#home"
   get "/signup", to: "users#new"
@@ -10,9 +6,13 @@ Rails.application.routes.draw do
   get "/edit",to: "users#edit"
   get "/admin", to: "admin#admin"
   get '/login', to: 'sessions#new'
-  get "listDell", to: "laptops#listDell"
+  get "list_dell", to: "laptops#list_dell"
+  get "list_asus", to: "laptops#list_asus"
+  get "list_msi", to: "laptops#list_msi"
   post '/login', to: 'sessions#create'
   delete '/logout',to: 'sessions#destroy'
+  get "/addlaptop", to: "laptops#new"
+  post "/addlaptop", to: "laptops#create"
   resources :users
   resources :laptops
 end
