@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   post "/addlaptop", to: "laptops#create"
   resources :users
   resources :laptops
+  resources :account_activations, only: [:edit]
 end
