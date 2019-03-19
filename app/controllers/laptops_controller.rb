@@ -1,17 +1,6 @@
 class LaptopsController < ApplicationController
   def new
-  end
-  def show
-    @laptop=Laptop.find(params[:id])
-  end 
-  def list_dell
-    @laptops=Laptop.Dell
-  end
-  def list_asus
-    @laptops=Laptop.Asus
-  end
-  def list_msi
-    @laptops=Laptop.MSI
+    @laptop=Laptop.new
   end
   def create
     @laptop=Laptop.new(laptop_params)
@@ -23,8 +12,11 @@ class LaptopsController < ApplicationController
       render "new"
     end
   end
+  def show
+    @laptop=Laptop.find(params[:id])
+  end
   private
   def laptop_params
-    params.permit(:name, :descripton, :price,:company)
+    params.require(:laptop).permit(:name, :descripetion, :price,:image1,:image2,:image3,:ram,:monitor,:weight)
   end
 end

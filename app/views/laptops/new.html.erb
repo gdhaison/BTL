@@ -1,6 +1,43 @@
-<center><strong><h1>Thêm laptop mới</h1></strong></center>
+<% provide(:title, 'New Laptop') %>
+<h1>Create new Laptop</h1>
+
 <div class="row">
-  <div class="col-md-6 offset-md-3">
-    <%= render 'form' %>
+  <div class="col-md-6 col-md-offset-3">
+  <%= form_with model: @laptop, local: true do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :price %>
+      <%= f.text_field :price %>
+
+      <%= f.label :descripetion %>
+      <%= f.text_field :descripetion %>
+
+      <%= f.label :ram %>
+      <%= f.text_field :ram %>
+
+      <%= f.label :monitor %>
+      <%= f.text_field :monitor %>
+
+      <%= f.label :weight %>
+      <%= f.text_field :weight %>
+
+      <div>
+        <%= f.label :image1 %>
+        <%= f.file_field :image1 %>
+      </div>
+
+      <div>
+        <%= f.label :image2 %>
+        <%= f.file_field :image2 %>
+      </div>
+
+      <div>
+        <%= f.label :image3 %>
+        <%= f.file_field :image3 %>
+      </div>
+
+      <%= f.submit "Create new Laptop", class: "btn btn-primary" %>
+    <% end %>
   </div>
 </div>

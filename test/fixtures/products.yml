@@ -2,22 +2,22 @@
 
 one:
   name: MyString
-  price: MyString
+  descripetion: MyString
+  image: 
   image1: 
   image2: 
-  image3: 
-  descripetion: MyString
+  price: MyString
   ram: MyString
   monitor: MyString
-  weight: MyString
+  drive: MyString
 
 two:
   name: MyString
-  price: MyString
+  descripetion: MyString
+  image: 
   image1: 
   image2: 
-  image3: 
-  descripetion: MyString
+  price: MyString
   ram: MyString
   monitor: MyString
-  weight: MyString
+  drive: MyString

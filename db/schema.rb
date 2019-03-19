@@ -10,17 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_07_082115) do
+ActiveRecord::Schema.define(version: 2019_03_19_163535) do
 
   create_table "laptops", force: :cascade do |t|
-    t.string "type"
     t.string "name"
-    t.string "descripton"
     t.string "price"
-    t.string "image"
+    t.string "image1_file_name"
+    t.string "image1_content_type"
+    t.integer "image1_file_size"
+    t.datetime "image1_updated_at"
+    t.string "image2_file_name"
+    t.string "image2_content_type"
+    t.integer "image2_file_size"
+    t.datetime "image2_updated_at"
+    t.string "image3_file_name"
+    t.string "image3_content_type"
+    t.integer "image3_file_size"
+    t.datetime "image3_updated_at"
+    t.string "descripetion"
+    t.string "ram"
+    t.string "monitor"
+    t.string "weight"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "company"
   end
 
   create_table "users", force: :cascade do |t|
@@ -31,9 +43,6 @@ ActiveRecord::Schema.define(version: 2019_03_07_082115) do
     t.string "password_digest"
     t.string "remember_digest"
     t.boolean "admin"
-    t.string "activation_digest"
-    t.boolean "activated", default: false
-    t.datetime "activated_at"
   end
 
 end

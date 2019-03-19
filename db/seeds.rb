@@ -6,8 +6,8 @@ User.create!(name:  "Vũ Hải Sơn",
              )
 
 99.times do |n|
-  name  = Faker::Name.name
-  email = "example-#{n+1}@railstutorial.org"
+  name  = Faker::Games::LeagueOfLegends.champion
+  email = Faker::Internet.email
   password = "password"
   User.create!(name:  name,
                email: email,
