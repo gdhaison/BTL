@@ -12,16 +12,26 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link href="stylesheets/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="stylesheets/slider.css" rel="stylesheet" type="text/css" media="all"/>
+    <script type="text/javascript" src="javascripts/jquery-1.7.2.min.js"></script> 
+    <script type="text/javascript" src="javascripts/move-top.js"></script>
+    <script type="text/javascript" src="javascripts/easing.js"></script>
+    <script type="text/javascript" src="javascripts/startstop-slider.js"></script>
   </head>
 
   <body>
     <%= render "layouts/header" %>
+    <h1></h1>
     <div class="container">
-    <% flash.each do |message_type, message| %>
+      <% flash.each do |message_type, message| %>
       <%= content_tag :div, message, class: "alert-#{message_type}" %>
-    <% end %>
-      <%= yield %>
-      <%= render "layouts/footer"%>
+      <% end %>
     </div> 
+    <div class="container">
+      <%= yield %>
+      <h1></h1>
+      <%= render "layouts/footer"%>
+    <div>
   </body>
 </html>
