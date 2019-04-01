@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get "/signup", to: "users#new"
   post "/signup",to: "users#create"
   get "/edit",to: "users#edit"
-  get "/admin", to: "admin#admin"
+  get "/admin", to: "admin#index"
   get '/login', to: 'sessions#new'
   get "list_dell", to: "laptops#list_dell"
   get "list_asus", to: "laptops#list_asus"
@@ -17,4 +17,9 @@ Rails.application.routes.draw do
   resources :users
   resources :laptops
   resources :account_activations, only: [:edit]
+
+  namespace :admin do
+    resources :users
+    resources :laptops
+  end
 end
