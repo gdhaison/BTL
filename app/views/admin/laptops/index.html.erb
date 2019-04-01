@@ -1,7 +1,8 @@
 <div class="wrap">
+  <%=link_to "Create new Laptop",new_admin_laptop_path%>
           <div class="card-header">
             <i class="fas fa-table"></i>
-            <center><h1>List of Users</h1></center></div>
+            <center><h1>List of Laptops</h1></center></div>
           <div class="card-body">
             <div class="pagi">
              <%= will_paginate %>
@@ -11,23 +12,35 @@
                 <thead>
                   <tr>
                     <th>Name</th>
-                    <th>Email</th>
+                    <th>Company</th>
+                    <th>Price</th>
+                    <th>Monitor</th>
+                    <th>Ram</th>
+                    <th>Weight</th>
                     <th>Delete</th>
                   </tr>
                 </thead>
                 <tfoot>
                   <tr>
                     <th>Name</th>
-                    <th>Email</th>
+                    <th>Company</th>
+                    <th>Price</th>
+                    <th>Monitor</th>
+                    <th>Ram</th>
+                    <th>Weight</th>
                     <th>Delete</th>
                   </tr>
                 </tfoot>
                 <tbody>
-                  <% @users.each do |user|%>
+                  <% @laptops.each do |laptop|%>
                   <tr>
-                    <td><%= user.name %></td>
-                    <td><%= user.email %></td>
-                    <td><%= link_to "Delete", admin_user_path(user), method: :delete,
+                    <td><%= laptop.name %></td>
+                    <td><%= laptop.company %></td>
+                    <td><%= laptop.price %></td>
+                    <td><%= laptop.monitor %></td>
+                    <td><%= laptop.ram %></td>
+                    <td><%= laptop.weight %></td>
+                    <td><%= link_to "Delete", admin_laptop_path(laptop), method: :delete,
                     data: { confirm: "Are you sure?" }%>
                     </td>
                   </tr>
@@ -38,3 +51,4 @@
               </div>
               <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
             </div>
+            

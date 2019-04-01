@@ -1,18 +1,10 @@
  <div class="wrap"> 
   <div class="header_bottom">
 	     	<div class="menu">
-	     		<ul>
+				 <ul>
+				    <li><%=link_to "Admin page", admin_path%></li>
 			    	<li><%=link_to "Users Management",admin_users_path%></li>
-			    	<li><a href="about.html">About</a></li>
-			    	<li><a href="delivery.html">Delivery</a></li>
-			    	<li><a href="news.html">News</a></li>
-						<li><a href="contact.html">Contact</a></li>
-						<% if logged_in?%>
-						<% if current_user.admin? %>
-						<li><%=link_to "Admin page", admin_path%></li>
-						<%end%>
-						<%end%>
-					
+			    	<li><%= link_to "Laptops Management",admin_laptops_path%></li>
 			    	<div class="clear"></div>
      			</ul>
 	     	</div>
