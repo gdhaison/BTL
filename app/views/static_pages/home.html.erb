@@ -73,3 +73,28 @@
  <div class="clear"></div>
 </div>
 </div>
+<div class="container">
+<div class="card">
+  <div class="card-header">
+    <center><h1>Newest Laptop</h1></center>
+  </div>
+  <div class = "card-body">
+    <div class="row">
+        <% @laptops.each do |laptop| %>
+        <div class="col-md-4">
+          <div class="card" style="width:300px">
+            <img class="card-img-top" src=<%= laptop.image1%> alt="Card image">
+              <div class="card-body">
+                <h4 class="card-title"><%=link_to laptop.name,laptop_path(laptop)%></h4>
+                <p class="card-text"><%=laptop.descripetion%></p>
+                <h4 class="card-text">Giá: <%=laptop.price%>VNĐ</h4>
+                <a href="#" class="btn btn-primary">Đặt mua</a>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+</div>    
+</div>
+</div>
+</div>
