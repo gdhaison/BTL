@@ -57,6 +57,9 @@ class UsersController < ApplicationController
     flash[:success] = "User deleted"
     redirect_to users_url
   end
+  def search
+    @users_search=User.find_by(params[:name])
+  end
 
   private
 
