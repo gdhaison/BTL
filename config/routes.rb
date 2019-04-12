@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'laptops/new'
   get "static_pages/home"
   root "static_pages#home"
+  get "/about", to: "static_pages#about"
   get "/signup", to: "users#new"
   post "/signup",to: "users#create"
   get "/edit",to: "users#edit"
