@@ -3,7 +3,7 @@
   <%= form_with scope: :session, url: login_path, local: true do |f| %>
 
       <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control',id: "input1" %>
+      <%= f.email_field :email, class: 'form-control',id: "input1",placeholder: "Email"%>
 
       <%= f.label :password %>
       <%= f.password_field :password, class: 'form-control',id: "input2" %>
