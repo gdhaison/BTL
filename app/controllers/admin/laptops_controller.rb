@@ -23,6 +23,6 @@ class Admin::LaptopsController < ApplicationController
     end
     private
   def laptop_params
-    params.require(:laptop).permit(:name, :descripetion, :price,:image1,:image2,:image3,:ram,:monitor,:weight)
+    params.require(:laptop).permit(:name, :descripetion, :price,:image1,:image2,:image3,:ram,:monitor,:weight,:brand_id)
   end
 end

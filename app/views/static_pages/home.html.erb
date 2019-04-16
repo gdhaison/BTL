@@ -4,13 +4,10 @@
 <div class="header_bottom_left">				
   <div class="categories">
     <ul>
-      <h3>Categories</h3>
-        <li><a href="#">Dell</a></li>
-        <li><a href="#">Asus</a></li>
-        <li><a href="#">MSI</a></li>
-        <li><a href="#">MacBook</a></li>
-        <li><a href="#">Sony</a></li>
-         <li><a href="#">HP</a></li>
+      <h3>Brand</h3>
+         <% @brands.each do |b|%>
+          <li><%= link_to b.name,"#"%></li>
+         <%end%>
          <li><a href="#"></a></li>
          <li><a href="#">Card</a></li>
          <li><a href="#">Clothing</a></li>

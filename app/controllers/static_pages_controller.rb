@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
     def home
         @laptops=Laptop.last(9)
+        @brands=Brand.all
       
     end
     def Dell

@@ -1,3 +1,9 @@
+
+10.times do |n|
+  name = Faker::Device.manufacturer
+  Brand.create!(name: name)
+end
+
 User.create!(name:  "Vũ Hải Sơn",
              email: "vuhaison@gmail.com",
              password:              "123456",
@@ -29,6 +35,7 @@ end
   monitor= "15.6 inch"
   weight= "1.5 kg"
   company = Faker::Device.manufacturer
+  brand_id = Random.rand(1..10)
 
   Laptop.create!(name:  name,
               price: price,
@@ -36,5 +43,7 @@ end
               ram: ram,
               monitor: monitor,
               weight: weight,
-              company: company)
+              company: company,
+              brand_id: brand_id
+              )
 end
