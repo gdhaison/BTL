@@ -375,7 +375,7 @@ body {
 	color:#383838;
 }
 .add-cart{
-	float:right;
+	float:left;
 	display: inline-block;
 }
 .add-cart h4 a{

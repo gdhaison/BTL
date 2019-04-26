@@ -1,9 +1,12 @@
 class LaptopsController < ApplicationController
   def index
-    @laptops=Laptop.all
+    @laptops = Laptop.paginate(page: params[:page], :per_page => 15)
   end
   def show
     @laptop=Laptop.find(params[:id])
+    @cart=current_cart.add(@laptop,@laptop.price)
+    @current_cart=current_cart
+    @brands=Brand.all
   end
   def new
     @laptop=Laptop.new
@@ -22,4 +25,5 @@ end
   def laptop_params
     params.require(:laptop).permit(:name, :descripetion, :price,:image1,:image2,:image3,:ram,:monitor,:weight,:brand_id)
   end
+  
 end

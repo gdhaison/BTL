@@ -19,7 +19,7 @@ gem 'faker'
 gem 'will_paginate',           '3.1.6'
 gem 'will_paginate-bootstrap4', '~> 0.2.2'
 gem "paperclip", "~> 5.1"
-
+gem 'acts_as_shopping_cart'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do

@@ -1,5 +1,5 @@
 
-10.times do |n|
+7.times do |n|
   name = Faker::Device.manufacturer
   Brand.create!(name: name)
 end
@@ -35,7 +35,7 @@ end
   monitor= "15.6 inch"
   weight= "1.5 kg"
   company = Faker::Device.manufacturer
-  brand_id = Random.rand(1..10)
+  brand_id = Random.rand(1..7)
 
   Laptop.create!(name:  name,
               price: price,

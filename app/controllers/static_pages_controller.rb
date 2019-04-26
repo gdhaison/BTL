@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
     def home
-        @laptops=Laptop.last(9)
+        @laptops=Laptop.last(4)
         @brands=Brand.all
       
     end

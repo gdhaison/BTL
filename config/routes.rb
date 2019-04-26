@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   resources :users
   resources :laptops
   resources :account_activations, only: [:edit]
+  resources :carts
+  resources :cart_items
 
   namespace :admin do
     resources :users
