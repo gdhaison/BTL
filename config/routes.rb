@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get "static_pages/home"
   root "static_pages#home"
   get "/about", to: "static_pages#about"
+  get "/new", to: "static_pages#new"
   get "/signup", to: "users#new"
   post "/signup",to: "users#create"
   get "/edit",to: "users#edit"
@@ -18,6 +19,7 @@ Rails.application.routes.draw do
   resources :users
   resources :laptops
   resources :account_activations, only: [:edit]
+  resources :microposts
 
   namespace :admin do
     resources :users

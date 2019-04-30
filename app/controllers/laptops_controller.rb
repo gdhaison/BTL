@@ -1,6 +1,6 @@
 class LaptopsController < ApplicationController
   def index
-    @laptops=Laptop.all
+    @laptops = Laptop.paginate(page: params[:page], :per_page => 15)
   end
   def show
     @laptop=Laptop.find(params[:id])
