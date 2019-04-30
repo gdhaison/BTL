@@ -1,6 +1,13 @@
+<div class="wrap">
+  <div class="card">
+    <center><h2>Create new Post</h2></center>
+  </div>
+</div>
+<div class="clear">
+  <h1></h1>
+</div>
 <%= render 'micropost_form' %>
 <div class="col-md-8">
-<%=link_to "Create new Post",new_admin_micropost_path,:class=>"btn btn-success"%>
 <% if @user.microposts.any? %>
   <h3>Microposts (<%= @user.microposts.count %>)</h3>
   <ol class="microposts">

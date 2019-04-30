@@ -21,10 +21,11 @@ User.create!(name:  "Vũ Hải Sơn",
                password_confirmation: password)
 end
 
-users = User.order(:created_at).take(6)
+users = User.order(:created_at).take(1)
 50.times do
   content = Faker::Games::LeagueOfLegends.quote
-  users.each { |user| user.microposts.create!(content: content) }
+  title = Faker::Games::LeagueOfLegends.champion
+  users.each { |user| user.microposts.create!(content: content,title: title) }
 end
 
 50.times do |n|

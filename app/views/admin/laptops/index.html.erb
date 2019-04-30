@@ -43,9 +43,9 @@
                     <td><%= laptop.ram %></td>
                     <td><%= laptop.weight %></td>
                     <td><%= link_to "Delete", admin_laptop_path(laptop), method: :delete,
-                    data: { confirm: "Are you sure?" }%>
+                    data: { confirm: "Are you sure?" },:class=>"btn btn-danger"%>
                     </td>
-                    <td><%= link_to "Edit"%></td>
+                    <td><%= link_to "Edit","", :class=>"btn btn-primary"%></td>
                   </tr>
                   <%end%>
                   </tbody>

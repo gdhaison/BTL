@@ -3,9 +3,7 @@
 <div class="header">
 		<div class="headertop_desc">
 			<div class="call">
-			<div class="container">
-			<%= link_to "laptophs", root_path, id: "logo" %>
-		  </div>
+			
 			</div>
 			<div class="account_desc">
 				<ul>
@@ -31,7 +29,10 @@
 			</div>
 			<div class="clear"></div>
 		</div>
-		
+		<div class="container">
+			<%= link_to "laptophs", root_path, id: "logo" %>
+		  </div>
+		<%= render "carts/index"%>
 	 <div class="clear"></div>
   </div>
 	<div class="header_bottom">
@@ -40,7 +41,7 @@
 			    	<li class="active"><a href="index.html">Home</a></li>
 			    	<li><%=link_to "About",about_path%></li>
 			    	<li><a href="delivery.html">Delivery</a></li>
-			    	<li><a href="news.html">News</a></li>
+			    	<li><%= link_to "News", new_path%></li>
 						<li><a href="contact.html">Contact</a></li>
 						<% if logged_in?%>
 						<% if current_user.admin? %>
