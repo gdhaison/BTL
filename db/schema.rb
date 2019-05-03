@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2019_05_03_084616) do
 
 # Could not dump table "microposts" because of following StandardError
 #   Unknown type 'attachment' for column 'image'
+<<<<<<< HEAD
 
   create_table "tests", force: :cascade do |t|
     t.string "image_file_name"
@@ -55,6 +56,8 @@ ActiveRecord::Schema.define(version: 2019_05_03_084616) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+=======
+>>>>>>> test4
 
   create_table "users", force: :cascade do |t|
     t.string "name"
