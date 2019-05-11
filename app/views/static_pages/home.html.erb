@@ -5,7 +5,7 @@
     <ul>
       <h3>Brand</h3>
          <% @brands.each do |b|%>
-          <li><%= link_to b.name,"#"%></li>
+          <li><%= link_to b.name,brand_index_path%></li>
          <%end%>
     </ul>
   </div>					

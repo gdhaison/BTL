@@ -4,6 +4,7 @@ class LaptopsController < ApplicationController
   end
   def show
     @laptop=Laptop.find(params[:id])
+    @brands=Brand.all
   end
   def new
     @laptop=Laptop.new
@@ -20,6 +21,6 @@ def create
 end
   private
   def laptop_params
-    params.require(:laptop).permit(:name, :descripetion, :price,:image1,:image2,:image3,:ram,:monitor,:weight,:brand_id)
+    params.require(:laptop).permit(:name, :descripetion, :price,:image1,:image2,:image3,:ram,:monitor,:weight,:brand_id,:quantity)
   end
 end

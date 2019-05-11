@@ -21,6 +21,6 @@ class Admin::MicropostsController < ApplicationController
     private
   
       def micropost_params
-        params.permit(:content)
+        params.permit(:title,:content,:user_id,:image2)
       end
 end

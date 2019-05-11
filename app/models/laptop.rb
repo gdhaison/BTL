@@ -15,4 +15,7 @@ class Laptop < ApplicationRecord
     validates_attachment :image3,
     content_type: { content_type: /\Aimage\/.*\z/ },
     size: { less_than: 1.megabyte }
+
+    scope :search, ->(term){where "name LIKE ?", "%#{term}%"}
+    scope :sorted, ->{order created_at: :desc}
 end

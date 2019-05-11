@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'brand/index'
+  get 'search/index'
   get 'laptops/new'
   get "static_pages/home"
   root "static_pages#home"
@@ -20,6 +22,7 @@ Rails.application.routes.draw do
   resources :laptops
   resources :account_activations, only: [:edit]
   resources :microposts
+  resources :brands
 
   namespace :admin do
     resources :users

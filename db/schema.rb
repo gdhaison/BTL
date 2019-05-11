@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_03_084616) do
+ActiveRecord::Schema.define(version: 2019_05_10_101506) do
 
   create_table "brands", force: :cascade do |t|
     t.string "name"
@@ -41,23 +41,12 @@ ActiveRecord::Schema.define(version: 2019_05_03_084616) do
     t.datetime "updated_at", null: false
     t.string "company"
     t.integer "brand_id"
+    t.integer "quantity"
     t.index ["brand_id"], name: "index_laptops_on_brand_id"
   end
 
 # Could not dump table "microposts" because of following StandardError
 #   Unknown type 'attachment' for column 'image'
-<<<<<<< HEAD
-
-  create_table "tests", force: :cascade do |t|
-    t.string "image_file_name"
-    t.string "image_content_type"
-    t.integer "image_file_size"
-    t.datetime "image_updated_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-=======
->>>>>>> test4
 
   create_table "users", force: :cascade do |t|
     t.string "name"
