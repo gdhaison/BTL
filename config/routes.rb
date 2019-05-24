@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'order_items/create'
+  get 'order_items/update'
+  get 'order_items/destroy'
+  get 'carts/show'
   get 'brand/index'
   get 'search/index'
   get 'laptops/new'
@@ -6,8 +10,6 @@ Rails.application.routes.draw do
   root "static_pages#home"
   get "/about", to: "static_pages#about"
   get "/new", to: "static_pages#new"
-  get "/signup", to: "users#new"
-  post "/signup",to: "users#create"
   get "/edit",to: "users#edit"
   get "/admin", to: "admin#index"
   get '/login', to: 'sessions#new'
@@ -23,6 +25,8 @@ Rails.application.routes.draw do
   resources :account_activations, only: [:edit]
   resources :microposts
   resources :brands
+  resource :cart, only: [:show]
+  resources :order_items, only: [:create, :update, :destroy]  
 
   namespace :admin do
     resources :users

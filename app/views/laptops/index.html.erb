@@ -1,20 +1,9 @@
-<div class="section group">
-  <div class = "paginate">
-    <%= will_paginate %>
+<h3 class="text-center">Products for Sale</h3>
+
+<div class="row">
+  <div class="col-xs-6 col-xs-offset-3">
+    <% @laptops.each do |laptop| %>
+      <%= render "laptop_row", laptop: laptop, order_item: @order_item %>
+    <% end %>
   </div>
-        <% @laptops.each do |laptop|%>
-				<div class="grid_1_of_4 images_1_of_4">
-          <img class="card-img-top" src=<%= laptop.image1%> alt="Card image">
-					 <h2><%= laptop.name%> </h2>
-					<div class="price-details">
-				       <div class="price-number">
-							<p><span class="rupees"><%=laptop.price%>VNĐ</span></p>
-					    </div>
-					       		<div class="add-cart">								
-									<h4><%= link_to "View Details",laptop_path(laptop)%></h4>
-							     </div>
-							 <div class="clear"></div>
-					</div>				     
-				</div>
-        <%end%>
-            </div>
+</div>

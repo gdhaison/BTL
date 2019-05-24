@@ -29,41 +29,16 @@
 					<div class="price">
 						<p>Price: <span><%= @laptop.price%> VNĐ</span></p>
 					</div>
-					<div class="available">
-						<p>Available Options :</p>
-					<ul>
-						<li>Color:
-							<select>
-							<option>Silver</option>
-							<option>Black</option>
-							<option>Dark Black</option>
-							<option>Red</option>
-						</select></li>
-						<li>Size:<select>
-							<option>Large</option>
-							<option>Medium</option>
-							<option>small</option>
-							<option>Large</option>
-							<option>small</option>
-						</select></li>
-						<li>Quality:<select>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select></li>
-					</ul>
-					</div>
-				<div class="share-desc">
-					<div class="share">
-						<p>Share Product :</p>
-						<ul>
-					    	<li><a href="#"><img src="images/facebook.png" alt="" /></a></li>
-					    	<li><a href="#"><img src="images/twitter.png" alt="" /></a></li>					    
-			    		</ul>
-					</div>
-					<div class="button"><span><a href="#">Add to Cart</a></span></div>					
+					<%= form_for @order_item, remote: true do |f| %>
+						<h4 class="text-right">Unit Price: <span style="color: green"><%= number_to_currency @laptop.price %></span></h4>
+						  <div class="input-group">
+							<%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
+							<div class="input-group-btn">
+							  <%= f.hidden_field :laptop_id, value: @laptop.id %>
+							  <%= f.submit "Add to Cart", class: "btn btn-primary" %>
+							</div>
+						  </div>
+						<% end %>				
 					<div class="clear"></div>
 				</div>
 				 <div class="wish-list">

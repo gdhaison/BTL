@@ -22,7 +22,7 @@
                         </ul>
 					  </li>
 					<%else%>
-					<li><%= link_to "Register",signup_path%></li>
+					<li><%= link_to "Register",new_user_path%></li>
 					<li><%= link_to "Log in",login_path%></li>
 					<%end%>
 				</ul>
@@ -32,7 +32,7 @@
 		<div class="container">
 			<%= link_to "laptophs", root_path, id: "logo" %>
 		  </div>
-		<%= render "carts/index"%>
+			<h1 class="cart-text"><%= render 'layouts/cart_text' %></h1>
 	 <div class="clear"></div>
   </div>
 	<div class="header_bottom">
