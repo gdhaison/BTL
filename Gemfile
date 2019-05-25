@@ -16,6 +16,8 @@ gem 'jquery_pwstrength_bootstrap_4', '~> 1.2', '>= 1.2.2'
 gem "bootstrap", ">= 4.1.2"
 gem 'bcrypt', '3.1.12'
 gem 'faker'
+gem 'jquery-rails'
+
 gem 'will_paginate',           '3.1.6'
 gem 'will_paginate-bootstrap4', '~> 0.2.2'
 gem "paperclip", "~> 5.1"
