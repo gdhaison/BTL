@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'carts/index'
+  get 'carts/show'
+  get 'order_items/create'
+  get 'order_items/update'
+  get 'order_items/destroy'
   get 'brand/index'
   get 'search/index'
   get 'laptops/new'
@@ -23,6 +28,8 @@ Rails.application.routes.draw do
   resources :account_activations, only: [:edit]
   resources :microposts
   resources :brands
+  resource :cart, only: [:show]
+  resources :order_items, only: [:create, :update, :destroy]
 
   namespace :admin do
     resources :users
