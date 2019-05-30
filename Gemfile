@@ -18,8 +18,7 @@ gem 'bcrypt', '3.1.12'
 gem 'faker'
 gem 'jquery-rails'
 
-gem 'will_paginate',           '3.1.6'
-gem 'will_paginate-bootstrap4', '~> 0.2.2'
+gem "pagy"
 gem "paperclip", "~> 5.1"
 
 gem 'bootsnap', '>= 1.1.0', require: false

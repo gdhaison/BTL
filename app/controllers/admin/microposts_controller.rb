@@ -3,7 +3,7 @@ class Admin::MicropostsController < ApplicationController
 
     def index
         @user= current_user
-        @microposts = @user.microposts.paginate(page: params[:page])
+        @pagy, @microposts = pagy(Micropost.all)
     end
     def create
       @micropost = current_user.microposts.build(micropost_params)

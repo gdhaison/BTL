@@ -1,7 +1,7 @@
 class Admin::LaptopsController < ApplicationController
     layout "admin/application"
     def index
-      @laptops=Laptop.paginate(page: params[:page],:per_page=>15)
+      @pagy, @laptops = pagy(Laptop.all)
     end
     def new
         @laptop=Laptop.new

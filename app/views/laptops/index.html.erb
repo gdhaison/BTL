@@ -1,6 +1,6 @@
 <div class="section group">
-  <div class = "paginate">
-    <%= will_paginate %>
+	<div class = "paginate">
+	<%== pagy_bootstrap_nav(@pagy) %>
   </div>
         <% @laptops.each do |laptop|%>
 				<div class="grid_1_of_4 images_1_of_4">

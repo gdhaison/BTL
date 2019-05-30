@@ -1,7 +1,7 @@
 class Admin::UsersController < ApplicationController
     layout "admin/application"
     def index
-        @users = User.paginate(page: params[:page], :per_page => 15)
+        @pagy, @users = pagy(User.all)
     end
     def destroy
         User.find(params[:id]).destroy
