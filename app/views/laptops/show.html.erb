@@ -33,7 +33,7 @@
               <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
               <div class="input-group-btn">
 							<%= f.hidden_field :laptop_id, value: @laptop.id %>
-              <%= f.submit "Add to Cart", class: "btn btn-danger" %>
+              <%= f.submit "Add to Cart", class: "btn btn-danger", onclick="alert('Xin chào các bạn')"%>
               </div>
             </div>
 				  <%end%>
