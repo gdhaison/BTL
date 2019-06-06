@@ -7,6 +7,7 @@ class LaptopsController < ApplicationController
     @laptop=Laptop.find(params[:id])
     @brands=Brand.all
     @order_item=current_order.order_items.new
+    @relates=Laptop.relate(@laptop.brand).last(4)
   end
   def new
     @laptop=Laptop.new

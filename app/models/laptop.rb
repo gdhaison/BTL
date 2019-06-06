@@ -19,4 +19,5 @@ class Laptop < ApplicationRecord
 
     scope :search, ->(term){where "name LIKE ?", "%#{term}%"}
     scope :sorted, ->{order created_at: :desc}
+    scope :relate, ->(brand){where brand: brand}
 end

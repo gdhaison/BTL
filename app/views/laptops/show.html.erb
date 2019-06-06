@@ -9,15 +9,10 @@
 						   <div id="products_example">
 								 <div id="products">
 								 <a href="#"><img src=<%= @laptop.image1%> alt=" " /></a>
-								<div class="slides_container">
-									<a href="#" target="_blank"><img src=<%= @laptop.image1%> alt=" " /></a>
-									<a href="#" target="_blank"><img src="" alt=" " /></a>
-									<a href="#" target="_blank"><img src="" alt=" " /></a>					
-								</div>
 								<ul class="pagination">
 									<li><a href="#"><img src=<%= @laptop.image1%> alt=" " /></a></li>
-									<li><a href="#"><img src="images/thumbnailslide-2.jpg" alt=" " /></a></li>
-									<li><a href="#"><img src="images/thumbnailslide-3.jpg" alt=" " /></a></li>
+									<li><a href="#"><img src=<%= @laptop.image2%> alt=" " /></a></li>
+									<li><a href="#"><img src=<%= @laptop.image3%> alt=" " /></a></li>
 								</ul>
 							</div>
 						</div>
@@ -33,7 +28,7 @@
               <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
               <div class="input-group-btn">
 							<%= f.hidden_field :laptop_id, value: @laptop.id %>
-              <%= f.submit "Add to Cart", class: "btn btn-danger", onclick="alert('Xin chào các bạn')"%>
+              <%= f.submit "Add to Cart", class: "btn btn-danger", id: "btn1"%>
               </div>
             </div>
 				  <%end%>
@@ -44,6 +39,24 @@
 				 	</ul>
 				 </div>
 			</div>
+			<table class="table">
+		<thead>
+			<tr>
+			  <th>Brand</th>
+        <th>Ram</th>
+        <th>Monitor</th>
+        <th>Weight</th>
+      </tr>
+    </thead>
+    <tbody>
+			<tr>
+			  <td><%= @laptop.brand.name%></td>
+        <td><%= @laptop.ram%></td>
+        <td><%= @laptop.monitor%></td>
+        <td><%=@laptop.weight%></td>
+      </tr>
+    </tbody>
+	</table>
 			<div class="clear"></div>
 		  </div>
 	
@@ -65,34 +78,8 @@
     		</div>
     		<div class="clear"></div>
     	</div>
-   <div class="section group">
-				<div class="grid_1_of_4 images_1_of_4">
-					 <a href="#"><img src="images/new-pic1.jpg" alt=""></a>					
-					<div class="price" style="border:none">
-					       		<div class="add-cart" style="float:none">								
-									<h4><a href="#">Add to Cart</a></h4>
-							     </div>
-							 <div class="clear"></div>
-					</div>
-				</div>
-				<div class="grid_1_of_4 images_1_of_4">
-					<a href="#"><img src="images/new-pic2.jpg" alt=""></a>
-					 <div class="price" style="border:none">
-					       		<div class="add-cart" style="float:none">								
-									<h4><a href="#">Add to Cart</a></h4>
-							     </div>
-							 <div class="clear"></div>
-					</div>
-				</div>
-				<div class="grid_1_of_4 images_1_of_4">
-					<a href="#"><img src="images/new-pic4.jpg" alt=""></a>
-					<div class="price" style="border:none">
-					       		<div class="add-cart" style="float:none">								
-									<h4><a href="#">Add to Cart</a></h4>
-							     </div>
-							 <div class="clear"></div>
-					</div>
-				</div>
+	 <div class="section group">
+	   <% @relates.each do |f|%>
 				<div class="grid_1_of_4 images_1_of_4">
 				 <img src="images/new-pic3.jpg" alt="">
 					 <div class="price" style="border:none">
@@ -102,6 +89,7 @@
 							 <div class="clear"></div>
 					</div>
 				</div>
+			<%end%>
 			</div>
         </div>
 				<div class="rightsidebar span_3_of_1">
@@ -127,3 +115,9 @@
  	</div>
     </div>
  </div>
+ <script language="javascript">
+                 var button = document.getElementById("btn1");
+                 button.onclick = function(){
+                 alert("Add to Cart success");
+                 }
+ </script>
