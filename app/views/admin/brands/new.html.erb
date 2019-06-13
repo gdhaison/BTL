@@ -1,0 +1,11 @@
+<center><h1>Create new Brand</h1></center>
+<center>
+<div class="col-md-6">
+<%= form_with model: @brand, local: true do |f| %>
+    <div class="field">
+      <%= f.text_area :name %>
+    </div>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+  <% end %>
+</div>
+</center>

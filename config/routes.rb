@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'laptops/new'
   get "static_pages/home"
   root "static_pages#home"
+  get "/payment", to: "payment#new"
   get "/about", to: "static_pages#about"
   get "/new", to: "static_pages#new"
   get "/signup", to: "users#new"
@@ -31,7 +32,6 @@ Rails.application.routes.draw do
   resources :order_items, only: [:create, :update, :destroy]
   resources :brands
   resources :comments
-
   namespace :admin do
     resources :users
     resources :laptops

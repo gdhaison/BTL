@@ -5,7 +5,8 @@ class Admin::LaptopsController < ApplicationController
     end
     def new
         @laptop=Laptop.new
-      end
+        @brands=Brand.all
+    end
     def create
         @laptop=Laptop.new(laptop_params)
         if @laptop.save

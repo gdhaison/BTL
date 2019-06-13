@@ -17,12 +17,12 @@ class Admin::BrandsController < ApplicationController
     end
   end
   def destroy
-    Brand.find_by(params[:id]).destroy
+    Brand.find(params[:id]).destroy
     flash[:success]="Delete success"
     redirect_to admin_brands_path
   end
   private 
   def brand_params
-    params.reqire(:brand).permit(:name)
+    params.require(:brand).permit(:name)
   end
 end
