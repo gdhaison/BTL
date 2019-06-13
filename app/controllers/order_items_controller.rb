@@ -2,9 +2,7 @@ class OrderItemsController < ApplicationController
   def create
     @order = current_order
     @order_item = @order.order_items.new(order_item_params)
-    if @order_item.save
-      flash[:success] = "Success!"
-    end
+    @order_item.save
     session[:order_id] = @order.id
   end
 
@@ -20,6 +18,7 @@ class OrderItemsController < ApplicationController
     @order_item = @order.order_items.find(params[:id])
     @order_item.destroy
     @order_items = @order.order_items
+    redirect_to carts_url
   end
 private
   def order_item_params

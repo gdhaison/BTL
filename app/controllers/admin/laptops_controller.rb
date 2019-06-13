@@ -13,7 +13,7 @@ class Admin::LaptopsController < ApplicationController
           flash[:success] = "Create success"
         else
           flash.now[:danger]="false"
-          render "new"
+          redirect_to new_admin_laptop_path
         end
     end
     def destroy

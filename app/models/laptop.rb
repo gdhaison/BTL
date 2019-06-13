@@ -1,6 +1,7 @@
 class Laptop < ApplicationRecord
     belongs_to :brand
     has_many :orders
+    has_many :comments
     validates :name, presence: true
     validates :descripetion, presence: true
     validates :price, presence: true

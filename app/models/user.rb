@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :microposts, dependent: :destroy
-  
+  has_many :comment
   attr_accessor :remember_token
   VALIDATE_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   before_save { email.downcase! }  

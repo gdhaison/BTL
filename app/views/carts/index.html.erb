@@ -1,7 +1,73 @@
-<div class="cart">
-			  	   <p>Welcome to our Online Store! <span>Cart:</span><div id="dd" class="wrapper-dropdown-2"> <%= %> item(s) - $0.00
-			  	   	<ul class="dropdown">
-						  	<li>you have no items in your Shopping cart</li>
-					    </ul></div>
-				  	 </p>
-			  </div>
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="jumbotron-heading">E-COMMERCE CART</h1>
+     </div>
+</section>
+
+<div class="container mb-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col"> </th>
+                            <th scope="col">Product</th>
+                            <th scope="col">Available</th>
+                            <th scope="col" class="text-center">Quantity</th>
+                            <th scope="col" class="text-right">Price</th>
+                            <th> </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <% @order_items.each do |order_item|%>
+                        <tr>
+                            <td><img src=<%= order_item.laptop.image1 %> height="42" width="42"> </td>
+                            <td><%= order_item.laptop.name%></td>
+                            <td>In stock</td>
+                            <td><center><%= order_item.quantity%></center></td>
+                            <td class="text-right"><%= order_item.laptop.price.to_i*order_item.quantity%></td>
+                            <td class="text-right"><%= link_to "delete", order_item, method: :delete,
+                            data: { confirm: "You sure?" },:class => "btn btn-danger" %></td>
+                        </tr>
+                    <%end%>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Sub-Total</td>
+                            <td class="text-right"><%= @subtotal%> VNĐ</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Shipping</td>
+                            <td class="text-right">100000 VNĐ</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><strong>Total</strong></td>
+                            <td class="text-right"><strong><%=@total%> VNĐ</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col mb-2">
+            <div class="row">
+                <div class="col-sm-12  col-md-6">
+                    <button class="btn btn-block btn-light">Continue Shopping</button>
+                </div>
+                <div class="col-sm-12 col-md-6 text-right">
+                    <button class="btn btn-lg btn-block btn-success text-uppercase">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

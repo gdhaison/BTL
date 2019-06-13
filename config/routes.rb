@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    get 'brands/index'
+  end
   get 'carts/index'
   get 'carts/show'
-  get 'order_items/create'
-  get 'order_items/update'
-  get 'order_items/destroy'
   get 'brand/index'
   get 'search/index'
   get 'laptops/new'
@@ -27,13 +27,15 @@ Rails.application.routes.draw do
   resources :laptops
   resources :account_activations, only: [:edit]
   resources :microposts
-  resources :brands
-  resource :cart, only: [:show]
+  resources :carts, only: [:index]
   resources :order_items, only: [:create, :update, :destroy]
+  resources :brands
+  resources :comments
 
   namespace :admin do
     resources :users
     resources :laptops
     resources :microposts
+    resources :brands
   end
 end

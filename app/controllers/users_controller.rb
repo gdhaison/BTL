@@ -3,9 +3,6 @@ class UsersController < ApplicationController
   before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user, only: :destroy
 
-  def method_without_layout
-    render layout: false
-  end
   def index
     @pagy, @users = pagy(User.all)
   end
@@ -58,10 +55,6 @@ class UsersController < ApplicationController
     flash[:success] = "User deleted"
     redirect_to users_url
   end
-  def search
-    @users_search=User.find_by(params[:name])
-  end
-
   private
 
   def user_params

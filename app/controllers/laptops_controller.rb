@@ -8,6 +8,7 @@ class LaptopsController < ApplicationController
     @brands=Brand.all
     @order_item=current_order.order_items.new
     @relates=Laptop.relate(@laptop.brand).last(4)
+    @comment=@laptop.comments.all
   end
   def new
     @laptop=Laptop.new
@@ -19,7 +20,7 @@ def create
       flash[:success] = "Create success"
     else
       flash.now[:danger]="false"
-      render "new"
+      redirect_to new_admin_laptop_path
     end
 end
   private
