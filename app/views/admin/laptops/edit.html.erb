@@ -1,0 +1,53 @@
+<% provide(:title, 'New Laptop') %>
+<center><h1>Update a Laptop</h1></center>
+
+<div class="addlap">
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+  <%= form_with model: @laptop, local: true do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      
+      <%= f.label :price %>
+      <%= f.text_field :price %>
+
+      <%= f.label :descripetion %>
+      <%= f.text_field :descripetion %>
+
+      <%= f.label :ram %>
+      <%= f.text_field :ram %>
+
+      <%= f.label :monitor %>
+      <%= f.text_field :monitor %>
+
+      <%= f.label :weight %>
+      <%= f.text_field :weight %>
+      <h1></h1>
+      <%= f.collection_select :brand_id, Brand.all, :id, :name, :prompt => "Select a Brand" %>
+
+
+      <div>
+        <%= f.label :image1 %>
+        <%= f.file_field :image1%>
+      </div>
+
+      <div>
+        <%= f.label :image2 %>
+        <%= f.file_field :image2 %>
+      </div>
+
+      <div>
+        <%= f.label :image3 %>
+        <%= f.file_field :image3 %>
+      </div>
+      <div>
+      <%= f.label :Quantity %>
+      <%= f.text_field :quantity %>
+
+      </div>
+
+      <%= f.submit "Update a Laptop", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+</div>

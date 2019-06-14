@@ -17,6 +17,18 @@ class Admin::LaptopsController < ApplicationController
           redirect_to new_admin_laptop_path
         end
     end
+    def edit
+      @laptop = Laptop.find(params[:id])
+    end
+    def update
+      @laptop = Laptop.find(params[:id])
+      if @laptop.update_attributes(laptop_params)
+        flash[:success] = "Profile updated"
+        redirect_to admin_laptops_path
+      else
+        render 'edit'
+      end
+    end
     def destroy
         Laptop.find(params[:id]).destroy
         flash[:success] = "User deleted"

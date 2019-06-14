@@ -1,0 +1,20 @@
+<center><h2><%= @brand.name%></h2></center>
+<div class="section group">
+	<div class = "paginate">
+  </div>
+        <% @laptops.each do |laptop|%>
+				<div class="grid_1_of_4 images_1_of_4">
+          <img class="card-img-top" src=<%= laptop.image1%> alt="Card image">
+					 <h2><%= laptop.name%> </h2>
+					<div class="price-details">
+				       <div class="price-number">
+							<p><span class="rupees"><%=laptop.price%>VNĐ</span></p>
+					    </div>
+					       		<div class="add-cart">								
+									<h4><%= link_to "View Details",laptop_path(laptop)%></h4>
+							     </div>
+							 <div class="clear"></div>
+					</div>				     
+				</div>
+        <%end%>
+            </div>

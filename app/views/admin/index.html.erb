@@ -1,0 +1,30 @@
+<script type="text/javascript">
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	theme: "light1", // "light2", "dark1", "dark2"
+	animationEnabled: false, // change to true		
+	title:{
+		text: "Chart of top sale Laptops"
+	},
+	data: [
+	{
+		// Change type to "bar", "area", "spline", "pie",etc.
+		type: "column",
+		dataPoints: [
+			{ label: "Dell",  y: 10  },
+			{ label: "Apple", y: 15  },
+			{ label: "Asus", y: 25  },
+			{ label: "Acer",  y: 30  },
+			{ label: "MSI",  y: 28  }
+		]
+	}
+	]
+});
+chart.render();
+
+}
+</script>
+
+<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"> </script>

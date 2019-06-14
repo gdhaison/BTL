@@ -23,8 +23,9 @@
 					<div class="price">
 					</div>
 					<%= form_with model: @order_item do |f| %>
-            <h4 class="text-left">Unit Price: <span style="color: red"><%= number_to_currency @laptop.price %></span></h4>
-            <div class="input-group">
+            <h4 class="text-left">Unit Price: <span style="color: red"><%= number_to_currency @laptop.price %>VND</span></h4>
+			<p><%=@laptop.descripetion%></p>
+			<div class="input-group">
               <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
               <div class="input-group-btn">
 				<%= f.hidden_field :laptop_id, value: @laptop.id %>
@@ -39,6 +40,7 @@
 				 	</ul>
 				 </div>
 			</div>
+			
 			<table class="table">
 		<thead>
 			<tr>
@@ -81,10 +83,10 @@
 	 <div class="section group">
 	   <% @relates.each do |f|%>
 				<div class="grid_1_of_4 images_1_of_4">
-				 <img src="images/new-pic3.jpg" alt="">
+				 <img src=<%= f.image1%> alt="">
 					 <div class="price" style="border:none">
 					       		<div class="add-cart" style="float:none">								
-									<h4><a href="#">Add to Cart</a></h4>
+									<h4><%= link_to "Show Details",f%></h4>
 							     </div>
 							 <div class="clear"></div>
 					</div>
@@ -96,7 +98,7 @@
 					<h2>Brand</h2>
 					<ul class="side-w3ls">
 					   <% @brands.each do |b|%>
-							<li><%= link_to b.name,"#"%></li>
+							<li><%= link_to b.name,b%></li>
 						 <%end%>
     				</ul>
     				<div class="subscribe">

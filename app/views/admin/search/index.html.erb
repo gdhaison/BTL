@@ -1,0 +1,61 @@
+<div class="wrap">
+  <%=link_to "Create new Laptop",new_admin_laptop_path,:class=>"btn btn-success"%>
+          <div class="card-header">
+            <i class="fas fa-table"></i>
+            <center><h1>List of Laptops</h1></center></div>
+          <div class="card-body">
+            <div class="pagi">
+            <div class="search_box">
+				 <%= form_for :term, url: admin_search_index_path, html: {class: "search"}, method: :get do |form| %>
+					<%= text_field_tag :term, params[:term], class: "custom" %>
+					<%= submit_tag "Search", name: nil, class: "register" %>
+			<% end %>
+	     	</div>
+            </div>
+             <div class="table-responsive">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Brand</th>
+                    <th>Price</th>
+                    <th>Monitor</th>
+                    <th>Ram</th>
+                    <th>Weight</th>
+                    <th>Delete</th>
+                    <th>Edit</th>
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                    <th>Name</th>
+                    <th>Brand</th>
+                    <th>Price</th>
+                    <th>Monitor</th>
+                    <th>Ram</th>
+                    <th>Weight</th>
+                    <th>Delete</th>
+                    <th>Edit</th>
+                  </tr>
+                </tfoot>
+                <tbody>
+                  <% @laptops.each do |laptop|%>
+                  <tr>
+                    <td><%= laptop.name %></td>
+                    <td><%= laptop.brand.name if laptop.brand %></td>
+                    <td><%= laptop.price %></td>
+                    <td><%= laptop.monitor %></td>
+                    <td><%= laptop.ram %></td>
+                    <td><%= laptop.weight %></td>
+                    <td><%= link_to "Delete", admin_laptop_path(laptop), method: :delete,
+                    data: { confirm: "Are you sure?" },:class=>"btn btn-danger"%>
+                    </td>
+                    <td><%= link_to "Edit",edit_admin_laptop_path(laptop), :class=>"btn btn-primary"%></td>
+                  </tr>
+                  <%end%>
+                  </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+            </div>

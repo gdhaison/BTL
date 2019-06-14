@@ -1,10 +1,13 @@
 class BrandsController < ApplicationController
-    layout "admin/application"
   def index
     @brands=Brand.all
   end
   def new
     @brand=Brand.new
+  end
+  def show
+    @brand=Brand.find(params[:id])
+    @laptops=@brand.laptops
   end
   def create 
     @brand=Brand.new(brand_params)

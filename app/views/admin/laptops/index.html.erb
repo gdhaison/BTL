@@ -6,6 +6,12 @@
           <div class="card-body">
             <div class="pagi">
             <%== pagy_bootstrap_nav(@pagy) %>
+            <div class="search_box">
+				 <%= form_for :term, url: admin_search_index_path, html: {class: "search"}, method: :get do |form| %>
+					<%= text_field_tag :term, params[:term], class: "custom" %>
+					<%= submit_tag "Search", name: nil, class: "register" %>
+			<% end %>
+	     	</div>
             </div>
              <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -45,7 +51,7 @@
                     <td><%= link_to "Delete", admin_laptop_path(laptop), method: :delete,
                     data: { confirm: "Are you sure?" },:class=>"btn btn-danger"%>
                     </td>
-                    <td><%= link_to "Edit","", :class=>"btn btn-primary"%></td>
+                    <td><%= link_to "Edit",edit_admin_laptop_path(laptop), :class=>"btn btn-primary"%></td>
                   </tr>
                   <%end%>
                   </tbody>
